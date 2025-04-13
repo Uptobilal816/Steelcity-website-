@@ -33,8 +33,19 @@ export default function ServicesSection() {
     <section className="services-section">
       <div className="container-services-section">
         <div className="section-header">
-          <div className="section-subtitle-service-section">OUR SERVICES</div>
-          <h2 className="section-title-service-section">We Provide Best Construction Services</h2>
+          <div className="section-subtitle-service-section"  >OUR SERVICES</div>
+          <h2 className="section-title-service-section" style={{
+        animationName: 'fadeInLeft',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }} >Constructing excellence delivering results</h2>
+          <p className="section-description-service-section" style={{
+        animationName: 'fadeInLeft',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }} > It is a long established fact that a reader will be distracted by the It is a long established fact that a reader will be distracted by the It is a long established fact that a reader will be </p>
         </div>
 
         <div className="services-grid">

@@ -12,22 +12,58 @@ export default function HeroSection() {
       </div>
 
       <div className="container">
-        <div className="hero-content">
-          <div className="hero-text">
-            <p className="hero-subtitle">SMART SOLUTIONS</p>
-            <h1 className="hero-title">
-              Building Your Vision Into Reality
-            </h1>
-            <p className="hero-description">
-              We specialize in creating innovative construction solutions that 
-              stand the test of time. Our team of experts delivers quality 
-              craftsmanship with attention to every detail.
-            </p>
-            <button className="hero-button">
-              Get Started
-              <span className="plus-icon">+</span>
-            </button>
-          </div>
+      <div className="hero-content">
+  <div className="hero-text">
+    <p
+      className="hero-subtitle"
+      style={{
+        animationName: 'fadeInLeft',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }}
+    >
+      SMART SOLUTIONS
+    </p>
+
+    <h1
+      className="hero-title"
+      style={{
+        animationName: 'fadeInLeft',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }}
+    >
+      Building Your Vision Into Reality
+    </h1>
+
+    <p
+      className="hero-description"
+      style={{
+        animationName: 'fadeInLeft',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }}
+    >
+      We specialize in creating innovative construction solutions that 
+      stand the test of time. Our team of experts delivers quality 
+      craftsmanship with attention to every detail.
+    </p>
+
+    <button className="hero-button"
+      style={{
+        animationName: 'fadeInLeft',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }} >
+      Get Started
+      <span className="plus-icon">+</span>
+    </button>
+  </div>
+
 
           <div className="hero-image-container">
             <div className="hero-image-wrapper">

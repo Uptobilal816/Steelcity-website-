@@ -196,7 +196,7 @@ img {
 :root {
   --primary: #ff6600;
   --black: #000;
-  --white: #fff;
+
   --heading-font-family: "Rajdhani", sans-serif;
 }
 
@@ -207,7 +207,7 @@ img {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
-  background-color: var(--white);
+  background-color: white;
   position: relative;
   display: flex;
   align-items: center;
@@ -347,6 +347,7 @@ img {
   position: relative;
   font-family: var(--heading-font-family);
   margin-top: 34px;
+  border-radius: 4px;
 }
 
 .hero-button:hover {
@@ -544,12 +545,22 @@ img {
     max-width: 320px;
   }
 }
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 
 /* About Section */
 .about-section {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background-color: #f3f3f3;
 }
 
 .about-grid {
@@ -698,8 +709,8 @@ img {
 /* Services Section */
 .container-services-section{
   margin-bottom: 150px;
-  margin-top: 30px;
   padding-left: 80px;
+  background-color: #f3f3f3
 }
 .services-flex {
   display: flex;
@@ -712,7 +723,7 @@ img {
   align-items: center; /* ✅ Align all children vertically in center */
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  background-color: white;
+  background-color: #f3f3f3;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   gap: 1rem;
@@ -740,10 +751,34 @@ img {
   font-size: 18px;
   color: #171717;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  
   margin-bottom: 1rem;
-  font-weight: 800;
-
+  font-weight: 700;
+  position: absolute;
+  left: 30px;
+  letter-spacing: 4px;
+}
+.section-title-service-section{
+  color: black;
+  position: absolute;
+  top: 40px;
+  left: 25px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 4px;
+  width: 370px;
+  height: 90px;
+  text-align: left;
+}
+.section-description-service-section{
+  width: 450px;
+  position: absolute;
+  right: -70px;
+  height: 70px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 25px;
+  text-align: left;
 }
 .service-description-service-section1 {
   font-size: 0.9rem;
@@ -784,6 +819,16 @@ img {
   margin-left: 0.5rem;
   font-weight: bold;
 }
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 
 
@@ -808,7 +853,9 @@ img {
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 3rem;
-  width: 100%;
+  width: 960px;
+  height: 130px;
+  margin-bottom: 0;
 }
 
 .header-left {
@@ -824,6 +871,8 @@ img {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  position: absolute;
+  left: 20px;
 }
 
 .section-title-recent-work {
@@ -832,6 +881,10 @@ img {
   margin: 0;
   color: white;
   text-align: left;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 450px;
 }
 
 /* Navigation Buttons */
@@ -1076,6 +1129,17 @@ img {
     padding: 1.5rem 0;
   }
 }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Removed the section-action and btn-primary styles as they're no longer needed */
 /* Employees Section */
 .employees-section {

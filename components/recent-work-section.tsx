@@ -77,7 +77,12 @@ export default function RecentWorkSection() {
             <div className="section-subtitle-recent-work">
               <h1>RECENT WORK</h1>
             </div>
-            <h2 className="section-title-recent-work">Building Strong Foundations For Success</h2>
+            <h2 className="section-title-recent-work" style={{
+        animationName: 'fadeUp',
+        animationDuration: '1s',
+        animationDelay: '0.4s',
+        animationFillMode: 'both',
+      }} >Building Strong Foundations For Success</h2>
           </div>
           <div className="navigation-buttons">
             <button 
