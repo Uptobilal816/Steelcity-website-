@@ -18,7 +18,7 @@ export default function AboutSection() {
           
 
           <div className="about-content">
-            <div className="section-subtitle1">--- ABOUT US ---</div>
+            <div className="section-subtitle1">ABOUT US</div>
             <h2 className="section-title1">Transforming spaces creating memories</h2>
 
             <p className="about-text">
@@ -28,7 +28,7 @@ export default function AboutSection() {
             <div className="about-features">
               <div className="about-feature">
                 <div className="feature-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                       stroke="currentColor"
@@ -53,7 +53,7 @@ export default function AboutSection() {
 
               <div className="about-feature">
                 <div className="feature-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
                       stroke="currentColor"
@@ -70,7 +70,7 @@ export default function AboutSection() {
                     />
                   </svg>
                 </div>
-                <div className="feature-content">
+                <div className="feature-content1">
                   <h3 className="feature-title">Plumbling Installation</h3>
                   <p className="feature-text">It is a long established fact that a reader will distracted by the readablejk content of a page when looking at its layout.</p>
                 </div>

@@ -60,12 +60,7 @@ export default function Header() {
                 <p className="phone-text">(808) 555-0111</p>
               </div>
             </div>
-            <div className="cart-wrapper">
-              <button className="cart-button">
-                <ShoppingCart className="icon" />
-                {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-              </button>
-            </div>
+            
           </div>
 
           {/* Mobile Menu Button */}

@@ -12,7 +12,7 @@ const services = [
   {
     id: 2,
     title: "Flooring Installation",
-    description: "It is a long established fact that a reader will be distracted by the.......",
+    description: "It is a long established fact that a reader will be distracted ",
     link: "/services/project-planning",
     image: "/images/service-2.png",
   },
@@ -21,7 +21,7 @@ const services = [
     
     title: "Fence Repair",
     description:
-      "It is a long established fact that a reader will be distracted by the",
+      "It is a long established fact that a reader will be distracted by the...",
     link: "/services/architecture-design",
     image: "/images/service-3.png",
   },
@@ -31,10 +31,10 @@ const services = [
 export default function ServicesSection() {
   return (
     <section className="services-section">
-      <div className="container">
+      <div className="container-services-section">
         <div className="section-header">
-          <div className="section-subtitle1">OUR SERVICES</div>
-          <h2 className="section-title1">We Provide Best Construction Services</h2>
+          <div className="section-subtitle-service-section">OUR SERVICES</div>
+          <h2 className="section-title-service-section">We Provide Best Construction Services</h2>
         </div>
 
         <div className="services-grid">
@@ -44,16 +44,16 @@ export default function ServicesSection() {
                 <Image
                   src={service.image || "/placeholder.svg"}
                   alt={service.title}
-                  width={400}
-                  height={300}
+                  width={210}
+                  height={84}
                   className="service-img"
                 />
               </div>
               
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
+              <h3 className="service-title-service-section1">{service.title}</h3>
+              <p className="service-description-service-section1">{service.description}</p>
               <Link href={service.link} className="service-link">
-                Read More
+                <button className="service-btn">READ MORE +</button> 
                 <svg
                   className="link-icon"
                   width="16"

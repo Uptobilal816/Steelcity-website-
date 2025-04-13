@@ -1,43 +1,47 @@
-import Link from "next/link"
-import Image from "next/image"
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section className="hero-section">
-      <div className="hero-background"></div>
+      {/* Geometric shapes - hidden on mobile */}
+      <div className="geometric-shapes">
+        <div className="shape shape-1"></div>
+        <div className="shape shape-2"></div>
+        <div className="shape shape-3"></div>
+        <div className="shape shape-4"></div>
+      </div>
+
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-subtitle">SMART SOLUTIONS</div>
+            <p className="hero-subtitle">SMART SOLUTIONS</p>
             <h1 className="hero-title">
-              Building the spaces<br />
-              where memories are<br />
-              made
+              Building Your Vision Into Reality
             </h1>
             <p className="hero-description">
-              We have been operating for over a decade, providing top-notch
-              services to our clients and building a strong
+              We specialize in creating innovative construction solutions that 
+              stand the test of time. Our team of experts delivers quality 
+              craftsmanship with attention to every detail.
             </p>
-            <Link href="/about" className="hero-button">
-              READ MORE
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            <button className="hero-button">
+              Get Started
+              <span className="plus-icon">+</span>
+            </button>
           </div>
+
           <div className="hero-image-container">
-          <div className="hero-image-wrapper">
-              <Image 
-                src="/images/banner-image.png"
-                alt="Construction workers"
+            <div className="hero-image-wrapper">
+              <Image
+                src="/images/banner-image.png" // Replace with your image path
+                alt="Construction professionals working"
                 fill
-                priority
                 className="hero-image"
+                priority
               />
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

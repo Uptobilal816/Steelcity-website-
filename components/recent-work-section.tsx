@@ -1,5 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const projects = [
   {
@@ -30,89 +33,130 @@ const projects = [
     image: "/images/news-2.png",
     link: "/projects/shopping-mall",
   },
-]
+  {
+    id: 5,
+    title: "Industrial Warehouse",
+    category: "Steel Structure",
+    image: "/images/work-3.png",
+    link: "/projects/industrial-warehouse",
+  },
+  {
+    id: 6,
+    title: "Industrial Warehouse",
+    category: "Steel Structure",
+    image: "/images/work-3.png",
+    link: "/projects/industrial-warehouse",
+  },{
+    id: 7,
+    title: "Industrial Warehouse",
+    category: "Steel Structure",
+    image: "/images/work-3.png",
+    link: "/projects/industrial-warehouse",
+  },
+];
 
 export default function RecentWorkSection() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const cardWidth = 320; // width of each card including gap
+  const visibleCards = 3; // number of cards visible at once
+
+  const nextProject = () => {
+    const maxScroll = (projects.length - visibleCards) * cardWidth;
+    setScrollPosition(prev => Math.min(prev + cardWidth, maxScroll));
+  };
+
+  const prevProject = () => {
+    setScrollPosition(prev => Math.max(prev - cardWidth, 0));
+  };
+
   return (
     <section className="recent-work-section">
       <div className="container">
         <div className="section-header">
-          <div  className="section-subtitle"> <h1 className="section-subtitle"> RECENT WORK </h1></div>
-          <h2 className="section-title">Our Latest Projects</h2>
+          <div className="header-left">
+            <div className="section-subtitle-recent-work">
+              <h1>RECENT WORK</h1>
+            </div>
+            <h2 className="section-title-recent-work">Building Strong Foundations For Success</h2>
+          </div>
+          <div className="navigation-buttons">
+            <button 
+              onClick={prevProject} 
+              className="nav-button prev-button"
+              disabled={scrollPosition === 0}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button 
+              onClick={nextProject} 
+              className="nav-button next-button"
+              disabled={scrollPosition >= (projects.length - visibleCards) * cardWidth}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <div className="project-image-container">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={400}
-                  height={300}
-                  className="project-image"
-                />
-                <div className="project-overlay">
-                  <Link href={project.link} className="project-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M19 14V19C19 19.53 18.79 20.04 18.41 20.41C18.04 20.79 17.53 21 17 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V7C3 6.47 3.21 5.96 3.59 5.59C3.96 5.21 4.47 5 5 5H10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Link>
+        <div className="projects-viewport">
+          <div 
+            className="projects-container"
+            style={{ transform: `translateX(-${scrollPosition}px)` }}
+          >
+            {projects.map((project) => (
+              <div key={project.id} className="project-card">
+                <div className="project-image-container">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={320}
+                    height={355}
+                    className="project-image"
+                  />
+                </div>
+                <div className="project-content">
+                  <span className="project-category">{project.category}</span>
+                  <h3 className="project-title">{project.title}</h3>
                 </div>
               </div>
-              <div className="project-content">
-                <span className="project-category">{project.category}</span>
-                <h3 className="project-title">{project.title}</h3>
-              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="stats-cards" >
+          <div className="card">
+            <div className="icon-recent-work">
+              <Image src="/images/counter-1.svg" alt="Award Icon" width={50} height={50} />
             </div>
-          ))}
+            <h3>200<span>+</span></h3>
+            <p>Winning award</p>
+          </div>
+          <div className="card">
+            <div className="icon-recent-work">
+              <Image src="/images/counter-2.svg" alt="Project Icon" width={50} height={50} />
+            </div>
+            <h3>550<span>+</span></h3>
+            <p>Project Done</p>
+          </div>
+          <div className="card">
+            <div className="icon-recent-work">
+              <Image src="/images/counter-3.svg" alt="Review Icon" width={50} height={50} />
+            </div>
+            <h3>100<span>+</span></h3>
+            <p>Clients Review</p>
+          </div>
+          <div className="card">
+            <div className="icon">
+              <Image src="/images/counter-4.svg" alt="Team Icon" width={50} height={50} />
+            </div>
+            <h3>350<span>+</span></h3>
+            <p>Team Member</p>
+          </div>
         </div>
-
-        <div className="section-action">
-          <Link href="/projects" className="btn-primary">
-            View All Projects
-            <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-        </div>
-
- 
-
-<div className="stats-cards">
-  <div className="card">
-    <div className="icon">
-      <Image src="/images/counter-1.svg" alt="Award Icon" width={200} height={200} />
-    </div>
-    <h3>200<span>+</span></h3>
-    <p>Winning award</p>
-  </div>
-  <div className="card">
-    <div className="icon">
-      <Image src="/images/counter-2.svg" alt="Project Icon" width={500} height={500} />
-    </div>
-    <h3>550<span>+</span></h3>
-    <p>Project Done</p>
-  </div>
-  <div className="card">
-    <div className="icon">
-      <Image src="/images/counter-3.svg" alt="Review Icon" width={50} height={50} />
-    </div>
-    <h3>100<span>+</span></h3>
-    <p>Clients Review</p>
-  </div>
-  <div className="card">
-    <div className="icon">
-      <Image src="/images/counter-4.svg" alt="Team Icon" width={50} height={50} />
-    </div>
-    <h3>350<span>+</span></h3>
-    <p>Team Member</p>
-  </div>
-</div>
-
       </div>
     </section>
-  )
+  );
 }
