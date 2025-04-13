@@ -12,7 +12,9 @@ const rajdhani = Rajdhani({
 export const metadata: Metadata = {
   title: "SteelCity - Building the spaces where memories are made",
   description: "SteelCity construction and steel manufacturing company",
-  generator: 'v0.dev'
+  icons:{
+    icon:"/images/icon.png"
+  }
 }
 
 export default function RootLayout({
