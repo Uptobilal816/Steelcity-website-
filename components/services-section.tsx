@@ -4,28 +4,25 @@ import Image from "next/image"
 const services = [
   {
     id: 1,
-    title: "Electrical Wiring",
+    title: <>Electrical&nbsp;Wiring</>,
     description: "It is a long established fact that a reader will be distracted by the",
     link: "/services/building-construction",
     image: "/images/service-1.png",
   },
   {
     id: 2,
-    title: "Flooring Installation",
-    description: "It is a long established fact that a reader will be distracted ",
+    title: <>Electrical&nbsp;Wiring</>,
+    description: "It is a long established fact that a reader will be distracted by the",
     link: "/services/project-planning",
     image: "/images/service-2.png",
   },
   {
     id: 3,
-    
-    title: "Fence Repair",
-    description:
-      "It is a long established fact that a reader will be distracted by the...",
+    title: <>Electrical&nbsp;Wiring</>,
+    description: "It is a long established fact that a reader will be distracted by the",
     link: "/services/architecture-design",
     image: "/images/service-3.png",
   },
-  
 ]
 
 export default function ServicesSection() {
@@ -33,19 +30,15 @@ export default function ServicesSection() {
     <section className="services-section">
       <div className="container-services-section">
         <div className="section-header">
-          <div className="section-subtitle-service-section"  >OUR SERVICES</div>
-          <h2 className="section-title-service-section" style={{
-        animationName: 'fadeInLeft',
-        animationDuration: '1s',
-        animationDelay: '0.4s',
-        animationFillMode: 'both',
-      }} >Constructing excellence delivering results</h2>
-          <p className="section-description-service-section" style={{
-        animationName: 'fadeInLeft',
-        animationDuration: '1s',
-        animationDelay: '0.4s',
-        animationFillMode: 'both',
-      }} > It is a long established fact that a reader will be distracted by the It is a long established fact that a reader will be distracted by the It is a long established fact that a reader will be </p>
+          <div className="section-subtitle-service-section">OUR SERVICES</div>
+          <h2 className="section-title-service-section">
+            Constructing excellence delivering results
+          </h2>
+          <p className="section-description-service-section">
+            It is a long established fact that a reader will be distracted by the It is a long
+            established fact that a reader will be distracted by the It is a long established fact
+            that a reader will be
+          </p>
         </div>
 
         <div className="services-grid">
@@ -54,33 +47,21 @@ export default function ServicesSection() {
               <div className="service-image">
                 <Image
                   src={service.image || "/placeholder.svg"}
-                  alt={service.title}
+                  alt="Card Image"
                   width={210}
                   height={84}
                   className="service-img"
                 />
               </div>
-              
-              <h3 className="service-title-service-section1">{service.title}</h3>
-              <p className="service-description-service-section1">{service.description}</p>
+
+              <div className="service-text-row">
+                <h3 className="service-title-service-section1">{service.title}</h3>
+                
+                <p className="service-description-service-section1" >{service.description}</p>
+              </div>
+
               <Link href={service.link} className="service-link">
-                <button className="service-btn">READ MORE +</button> 
-                <svg
-                  className="link-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <button className="service-btn">READ MORE +</button>
               </Link>
             </div>
           ))}

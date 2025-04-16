@@ -133,6 +133,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} SteelCity. All rights reserved.</p>
         </div>
+       
       </div>
     </footer>
   )

@@ -35,38 +35,40 @@ const projects = [
   },
   {
     id: 5,
-    title: "Industrial Warehouse",
+    title: "Factory Setup",
     category: "Steel Structure",
     image: "/images/work-3.png",
-    link: "/projects/industrial-warehouse",
+    link: "/projects/factory-setup",
   },
   {
     id: 6,
-    title: "Industrial Warehouse",
-    category: "Steel Structure",
+    title: "Bridge Construction",
+    category: "Infrastructure",
     image: "/images/work-3.png",
-    link: "/projects/industrial-warehouse",
-  },{
+    link: "/projects/bridge-construction",
+  },
+  {
     id: 7,
-    title: "Industrial Warehouse",
-    category: "Steel Structure",
+    title: "Road Development",
+    category: "Civil Works",
     image: "/images/work-3.png",
-    link: "/projects/industrial-warehouse",
+    link: "/projects/road-development",
   },
 ];
 
 export default function RecentWorkSection() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const cardWidth = 320; // width of each card including gap
-  const visibleCards = 3; // number of cards visible at once
+  const cardWidth = 330; // match your CSS width
+  const visibleCards = 3;
 
   const nextProject = () => {
     const maxScroll = (projects.length - visibleCards) * cardWidth;
-    setScrollPosition(prev => Math.min(prev + cardWidth, maxScroll));
+    setScrollPosition((prev) => (prev + cardWidth > maxScroll ? 0 : prev + cardWidth));
   };
 
   const prevProject = () => {
-    setScrollPosition(prev => Math.max(prev - cardWidth, 0));
+    const maxScroll = (projects.length - visibleCards) * cardWidth;
+    setScrollPosition((prev) => (prev - cardWidth < 0 ? maxScroll : prev - cardWidth));
   };
 
   return (
@@ -77,39 +79,50 @@ export default function RecentWorkSection() {
             <div className="section-subtitle-recent-work">
               <h1>RECENT WORK</h1>
             </div>
-            <h2 className="section-title-recent-work" style={{
-        animationName: 'fadeUp',
-        animationDuration: '1s',
-        animationDelay: '0.4s',
-        animationFillMode: 'both',
-      }} >Building Strong Foundations For Success</h2>
+            <h2
+              className="section-title-recent-work"
+              style={{
+                animationName: "fadeUp",
+                animationDuration: "1s",
+                animationDelay: "0.4s",
+                animationFillMode: "both",
+              }}
+            >
+              Building Strong Foundations For Success
+            </h2>
           </div>
           <div className="navigation-buttons">
-            <button 
-              onClick={prevProject} 
-              className="nav-button prev-button"
-              disabled={scrollPosition === 0}
-            >
+            <button onClick={prevProject} className="nav-button prev-button">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
-            <button 
-              onClick={nextProject} 
-              className="nav-button next-button"
-              disabled={scrollPosition >= (projects.length - visibleCards) * cardWidth}
-            >
+            <button onClick={nextProject} className="nav-button next-button">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
           </div>
         </div>
 
         <div className="projects-viewport">
-          <div 
+          <div
             className="projects-container"
-            style={{ transform: `translateX(-${scrollPosition}px)` }}
+            style={{
+              transform: `translateX(-${scrollPosition}px)`,
+            }}
           >
             {projects.map((project) => (
               <div key={project.id} className="project-card">
@@ -117,7 +130,7 @@ export default function RecentWorkSection() {
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    width={320}
+                    width={330}
                     height={355}
                     className="project-image"
                   />
@@ -131,35 +144,45 @@ export default function RecentWorkSection() {
           </div>
         </div>
 
-        <div className="stats-cards" >
+        {/* Stats section remains unchanged */}
+        <div className="stats-cards">
           <div className="card">
             <div className="icon-recent-work">
-              <Image src="/images/counter-1.svg" alt="Award Icon" width={50} height={50} />
+              <Image src="/images/counter-1.svg" alt="Award Icon" width={40} height={40} />
             </div>
-            <h3>200<span>+</span></h3>
+            <h3>
+              200<span>+</span>
+            </h3>
             <p>Winning award</p>
           </div>
           <div className="card">
             <div className="icon-recent-work">
-              <Image src="/images/counter-2.svg" alt="Project Icon" width={50} height={50} />
+              <Image src="/images/counter-2.svg" alt="Project Icon" width={45} height={45} />
             </div>
-            <h3>550<span>+</span></h3>
+            <h3>
+              550<span>+</span>
+            </h3>
             <p>Project Done</p>
           </div>
           <div className="card">
             <div className="icon-recent-work">
-              <Image src="/images/counter-3.svg" alt="Review Icon" width={50} height={50} />
+              <Image src="/images/counter-3.svg" alt="Review Icon" width={40} height={40} />
             </div>
-            <h3>100<span>+</span></h3>
+            <h3>
+              100<span>+</span>
+            </h3>
             <p>Clients Review</p>
           </div>
           <div className="card">
-            <div className="icon">
-              <Image src="/images/counter-4.svg" alt="Team Icon" width={50} height={50} />
+            <div className="icon-recent-work">
+              <Image src="/images/counter-3.svg" alt="Review Icon" width={40} height={40} />
             </div>
-            <h3>350<span>+</span></h3>
-            <p>Team Member</p>
+            <h3>
+              100<span>+</span>
+            </h3>
+            <p>Work Done</p>
           </div>
+         
         </div>
       </div>
     </section>
