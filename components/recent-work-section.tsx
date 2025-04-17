@@ -10,49 +10,49 @@ const projects = [
     title: "Modern Office Building",
     category: "Architecture",
     image: "/images/work-1.png",
-    link: "/projects/modern-office-building",
+    
   },
   {
     id: 2,
     title: "Residential Complex",
     category: "Construction",
     image: "/images/work-2.png",
-    link: "/projects/residential-complex",
+   
   },
   {
     id: 3,
     title: "Industrial Warehouse",
     category: "Steel Structure",
     image: "/images/work-3.png",
-    link: "/projects/industrial-warehouse",
+   
   },
   {
     id: 4,
     title: "Shopping Mall",
     category: "Commercial",
     image: "/images/news-2.png",
-    link: "/projects/shopping-mall",
+    
   },
   {
     id: 5,
     title: "Factory Setup",
     category: "Steel Structure",
     image: "/images/work-3.png",
-    link: "/projects/factory-setup",
+    
   },
   {
     id: 6,
     title: "Bridge Construction",
     category: "Infrastructure",
     image: "/images/work-3.png",
-    link: "/projects/bridge-construction",
+    
   },
   {
     id: 7,
     title: "Road Development",
     category: "Civil Works",
     image: "/images/work-3.png",
-    link: "/projects/road-development",
+  
   },
 ];
 

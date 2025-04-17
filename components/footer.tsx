@@ -131,7 +131,22 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} SteelCity. All rights reserved.</p>
+          <p className="rights-text">
+            &copy; {new Date().getFullYear()} SteelCity. All rights reserved.
+          </p>
+          <div className="footer-bottom-links">
+            <Link href="/privacy" className="footer-bottom-link">
+              Privacy Policy
+            </Link>
+            <span className="divider">|</span>
+            <Link href="/terms" className="footer-bottom-link">
+              Terms & Conditions
+            </Link>
+            <span className="divider">|</span>
+            <Link href="/contact" className="footer-bottom-link">
+              Contact Us
+            </Link>
+          </div>
         </div>
        
       </div>
