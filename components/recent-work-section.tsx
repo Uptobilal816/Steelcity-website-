@@ -58,7 +58,7 @@ const projects = [
 
 export default function RecentWorkSection() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const cardWidth = 330; // match your CSS width
+  const cardWidth = 400; // match your CSS width
   const visibleCards = 3;
 
   const nextProject = () => {
