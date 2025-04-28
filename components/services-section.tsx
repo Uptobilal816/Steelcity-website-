@@ -31,9 +31,11 @@ export default function ServicesSection() {
       <div className="container-services-section">
         <div className="section-header">
           <div className="section-subtitle-service-section">OUR SERVICES</div>
-          <h2 className="section-title-service-section">
-            Constructing excellence delivering results
-          </h2>
+          <h1 className="section-title-service-section" >
+            
+            Constructing Excellence Delivering results
+            
+          </h1>
           <p className="section-description-service-section">
             It is a long established fact that a reader will be distracted by the It is a long
             established fact that a reader will be distracted by the It is a long established fact
